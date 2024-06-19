@@ -15,7 +15,9 @@ export class FluentIcons {
         result.push({
           type: type as 'outlined' | 'filled',
           name: icon.name,
-          url: `https://fluenticons.co/icons/${icon.svgFileName}`,
+          url: `https://raw.githubusercontent.com/microsoft/fluentui-system-icons/main/assets/${icon.name
+            .replace(/([A-Z])/g, ' $1')
+            .trim()}/SVG/${icon.svgFileName}`,
         });
       }
     return result;
